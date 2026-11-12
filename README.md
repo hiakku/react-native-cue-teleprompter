@@ -88,3 +88,16 @@ The starter scripts are examples, editable or removable like any other script. U
 - `eas.json`: Android preview APK and production AAB profiles
 
 Validation details are recorded in `VALIDATION.md`.
+
+## Website deployment
+
+Public website: https://hiakku-cue-teleprompter.pages.dev/
+
+Build with Node 22.13+ and deploy the compiled website to Cloudflare Pages:
+
+```sh
+npm run build:web
+npx wrangler@4.160.1 pages deploy dist --project-name hiakku-cue-teleprompter --branch main
+```
+
+The post-export script moves Expo dependency assets out of `assets/node_modules/` because Cloudflare excludes directories with that name. Only compiled website assets are uploaded. This is a direct upload deployment; GitHub pushes do not automatically redeploy it.
