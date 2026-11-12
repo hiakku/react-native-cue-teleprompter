@@ -1,0 +1,7 @@
+node_modules/
+.expo/
+dist/
+*.zip
+VALIDATION.md
+tests/
+preview*.png
